@@ -1,3 +1,6 @@
+# These carbon emission calculations are distantly related to some
+# actual models out there.
+
 # if it is anything like in the first version of the game:
 # result_2 = result[2]
 # ,but for now:
