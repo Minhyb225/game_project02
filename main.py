@@ -1,17 +1,17 @@
-# These carbon emission calculations are distantly related to some
-# actual models out there.
-
 # if it is anything like in the first version of the game:
 # result_2 = result[2]
 # ,but for now:
 result_2 = 1000
-def Carbon(co):
-    if co < 550:
+def Carbon(km_latest):
+    if km_latest < 550:
+        co = km_latest
         co += (co + co * 0.1) * 10
         return co
     else:
+        co = km_latest
         co += (co + 50) * 10
         return co
+# here we call this function:
 co2_consumed = Carbon(result_2)
 print(co2_consumed)
 
