@@ -10,34 +10,51 @@
     <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" defer></script> <!-- link of map library-->
     <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.esm.js" defer></script> <!-- ionicons library-->
     <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=News+Cycle&display=swap" rel="stylesheet">
     <script src="main.js" defer></script>
-    <title>Top Gun</title>
+    <title>Moomin Game</title>
 </head>
 
 <body>
-    <div class="container">  <!-- block the body place -->
+    <div class="container">
         <header class="page-header">
-<!--
             <h1 class="page-title">
-                <ion-icon name="airplane-outline"></ion-icon>&nbsp;Moonmin's&nbsp;Travelling&nbsp;<ion-icon name="airplane-outline"></ion-icon>
+                <ion-icon name="airplane-outline"></ion-icon>&nbsp;Moomin's&nbsp;Traveling&nbsp;<ion-icon name="airplane-outline"></ion-icon>
             </h1>
--->
-            <nav> <!-- nav element: make separate place -->
-                <ul class="flex-wrap space-evenly"> <!-- make button-->
+
+            <nav>
+                <ul class="flex-wrap space-evenly">
                     <li>
                         <a class="button button-white" href="index.html">Game</a>
-                    </li>
-                    <li class="page-title">
-                        <ion-icon name="airplane-outline"></ion-icon>&nbsp;Moonmin's&nbsp;Travelling&nbsp;<ion-icon name="airplane-outline"></ion-icon>
                     </li>
                     <li>
                         <a class="button button-white" href="about.html">About</a>
                     </li>
                 </ul>
             </nav>
-        </header>
+        </header><!-- block the body place
+        <header class="page-header">
 
+            <h1 class="page-title">
+                <ion-icon name="airplane-outline"></ion-icon>&nbsp;Moonmin's&nbsp;Travelling&nbsp;<ion-icon name="airplane-outline"></ion-icon>
+            </h1>
 
+            <nav>  nav element: make separate place
+                <ul class="flex-wrap space-evenly"> make button
+                    <li>
+                        <a class="button button-white" href="index.html">Game</a>
+                    </li>
+                    <li class="page-title">
+                        <ion-icon name="airplane-outline"></ion-icon>&nbsp;Moomin's&nbsp;Traveling&nbsp;<ion-icon name="airplane-outline"></ion-icon>
+                    </li>
+                    <li>
+                        <a class="button button-white" href="about.html">About</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>  -->
 
         <main class="flex-wrap">
             <div id="map">
@@ -46,7 +63,7 @@
             <div class="boxes">
                 <section class="box">
                     <header>
-                        <h2>Game Status</h2>
+                        <h2 class="headers">Game Status</h2>
                     </header>
                     <table>
                         <tr> <!-- table row -->
@@ -82,12 +99,12 @@
 
                 <section id="player-name">
                     <header>
-                        <h2>Stops</h2>
+                        <h2 class="headers">Stops</h2>
                     </header>
                 </section>
 
                 <section class="minigame">
-                    <h3>Score:
+                    <h3 class="headers">Score:
                         <span id="results"></span>
                     </h3>
                     <div class="grid">
@@ -101,7 +118,7 @@
 
 
         <footer class="page-footer">
-            <p>I made this!</p>
+            <p>Moomin's Traveling -22</p>
         </footer>
         <div class="goal hide">
             <h2>Gooooool!!!</h2>
@@ -114,7 +131,7 @@
 
 <!--
     <div id="player-modal">
-        <form id="player-form"> <!-- form is readed by Js
+        <form id="player-form">  form is readed by Js
             <input id="player-input" type="text" placeholder="Player name" required>
             <input type="submit" value="Start game">
         </form>

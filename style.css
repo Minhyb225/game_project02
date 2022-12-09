@@ -5,6 +5,15 @@
   --white: rgb(248, 246, 246);
   --grey: rgb(128, 128, 128);
   --dark-grey: rgb(57, 57, 57);
+  /* pastel colors */
+  --lilac: rgb(222, 201, 255);
+  --lightpink: rgb(255, 222, 233);
+  --lightblue: rgb(222, 246, 255);
+  --yellow: rgb(255, 253, 196);
+  --green: rgb(209, 255, 213);
+  --beige: rgb(242, 226, 220);
+  --darkpink: rgb(217, 102, 144);
+  --darkblue: rgb( 3, 103, 166);
 }
 
 /* utilites */
@@ -18,8 +27,9 @@
 }
 
 .button-white {
-  background-color: var(--white);
-  color: var(--black);
+  background-color: var(--lightpink);
+  color: var(--darkblue);
+  font-size: large;
 }
 
 .button:hover {
@@ -53,8 +63,9 @@ html,
 body {
   margin: 0;
   padding: 0;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  background-color: var(--white);  /* var() function to use variable */
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-family: 'News Cycle', sans-serif;
+  background-color: var(--lightpink);  /* var() function to use variable */
   scroll-behavior: smooth;
 }
 
@@ -65,8 +76,8 @@ body {
 
 .page-header,
 .page-footer {
-  background-color: var(--black);
-  color: var(--white);
+  background-color: var(--darkblue);
+  color: var(--lightpink);
   padding: 1rem;
 }
 
@@ -77,6 +88,7 @@ body {
 .page-title {
   margin: 0;
   text-align: center;
+  font-size: xx-large;
 }
 
 ion-icon {
@@ -98,6 +110,19 @@ main {
   overflow: hidden;
 }
 
+.maintext {
+  color: var(--darkpink);
+  font-size: large;
+}
+
+figcaption {
+  color: var(--darkblue);
+  font-size: medium;
+}
+
+.headers {
+  color: var(--darkblue);
+}
 .boxes {
   width: 100%;
 }
@@ -110,7 +135,7 @@ main {
 #map,
 .box {
   border-radius: 6px;
-  box-shadow: rgba(0, 0, 0, 0.3) 3px 3px 10px;
+  box-shadow: var(--darkpink) 3px 3px 10px;
   margin-bottom: 1rem;
 }
 
