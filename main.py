@@ -10,7 +10,7 @@ connection = mysql.connector.connect(
 
 # Now the screen name needs to be received somehow.
 # For purposes of this example we use default screen name:
-screen_name = "Ilkka"
+screen_name = "Heini"
 
 # to fetch the previous co2_consumed from sql:
 sql = "SELECT co2_consumed FROM game WHERE screen_name='" + screen_name + "';"
@@ -21,6 +21,7 @@ result_2 = str(result_2)
 result_2 = result_2[2:-3]
 result_2 = int(result_2)
 
+# In the beginning Heini has consumed 2000 c02, and she is located in Helsinki.
 # The latest travelled distance is received/assumed somehow. For now let's assume that:
 latest_distance = 400
 
