@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
       card.addEventListener('click', flipCard)
       grid.appendChild(card)
     }
-    setTimeout(hide, 4000)
+    //setTimeout(hide, 4000)
   }
   //check for matches
   function checkForMatch() {

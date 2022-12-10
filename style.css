@@ -204,7 +204,7 @@ main {
 }
 
 
-/* adding moblie version */
+/* adding mobile version */
 @media screen and (min-width: 769px) {
   .box {
     font-size: initial;
@@ -235,7 +235,9 @@ main {
   border: 5px solid rgba(255, 255, 255, 0.5);
 }
 
-.minigame
+.minigame {
+
+}
 
 .grid {
   display: flex;
