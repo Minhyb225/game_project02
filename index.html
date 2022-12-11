@@ -17,11 +17,6 @@
 <body>
     <div class="container">  <!-- block the body place -->
         <header class="page-header">
-<!--
-            <h1 class="page-title">
-                <ion-icon name="airplane-outline"></ion-icon>&nbsp;Moonmin's&nbsp;Travelling&nbsp;<ion-icon name="airplane-outline"></ion-icon>
-            </h1>
--->
             <nav> <!-- nav element: make separate place -->
                 <ul class="flex-wrap space-evenly"> <!-- make button-->
                     <li>
@@ -40,10 +35,53 @@
 
 
         <main class="flex-wrap">
-            <div id="map">
-                <!-- <img class="responsive-img" src="img/finland.svg" alt="map of finland"> -->
+            <!-- lift -->
+            <div id="map-airport">
+                <div class="airp">
+                  <img src="img/FinalandNoBorders.png" alt="map of finland" usemap="#airportsmap" width="414" height="661">
+                  <map name="airportsmap">
+                  <area id="helsinki" shape="rect" coords="165,605,261,630" alt="Helsinki" >
+                  <area id="mariehamn" shape="rect" coords="24,610,100,632" alt="Mariehamn" onclick="myFunction_Mariehamn()">
+                  <area id="turku" shape="rect" coords="116,586,150,611" alt="Turku" onclick="myFunction_Turku()">
+                  <area id="utti" shape="rect" coords="274,562,303, 588" alt="Utti" onclick="myFunction_Utti()">
+                  <area id="pori" shape="rect" coords="109,512,137,545" alt="Pori" onclick="myFunction_Pori()">
+                  <area id="tamp" shape="rect" coords="142,545,247,567" alt="Tampere-Pirkkala" onclick="myFunction_Tampere()">
+                  <area id="savonlinna" shape="rect" coords="301,510,366,536" alt="Savonlinna" onclick="myFunction_Savonlvarinna()">
+                  <area id="hall" shape="rect" coords="195,511,228,540" alt="Halli" onclick="myFunction_Halli()">
+                  <area id="jyv" shape="rect" coords="211,479,265,507" alt="Jyväskylä" onclick="myFunction_Jyväskylä()">
+                  <area id="vaasa" shape="rect" coords="115,429,149,459" alt="Vaasa" onclick="myFunction_Vaasa()">
+                  <area id="kuop" shape="rect" coords="280,436,323,460" alt="Kuopio" onclick="myFunction_Kuopio()">
+                  <area id="joen" shape="rect" coords="329,456,379,484" alt="Joensuu" onclick="myFunction_Joensuu()">
+                  <area id="kokkola" shape="rect" coords="107,381,227,419" alt="Kokkola_pietarsaari" onclick="myFunction_Kokkola()">
+                  <area id="kaja" shape="rect" coords="278,355,321,384" alt="Kajaani" onclick="myFunction_Kajaani()">
+                  <area id="oulu" shape="rect" coords="216,319,252,349" alt="Oulu" onclick="myFunction_Oulu()">
+                  <area id="kemi" shape="rect" coords="185,261,264,294" alt="Kemi-Tornio" onclick="myFunction_Kemi()">
+                  <area id="kuusamo" shape="rect" coords="310,255,366,286" alt="Kuusamo" onclick="myFunction_Kuusamvaro()">
+                  <area id="rov" shape="rect" coords="217,217,282,251" alt="Rovaniemi" onclick="myFunction_Rovaniemi()">
+                  <area id="kit" shape="rect" coords="207,148,250,181" alt="Kittilä" onclick="myFunction_Kit()">
+                  <area id="enon" shape="rect" coords="164,102,232,192" alt="Enontekiö" onclick="myFunction_Enontekiö()">
+                  <area id="ivalo" shape="rect" coords="272,90,307,121" alt="Ivalo" onclick="myFunction_Iva()">
+                  </map>
+                </div>
+                <!-- <div class="airp">
+                  <img src="img/map-.fix.png" usemap="#image_map">
+                  <map name="image_map">
+                  <area id="airp airp--1" alt="Ivalo" title="Ivalo" onclick="myFunction_Iva()" coords="407,120,31" shape="circle" >
+                  <area d="airp airp--2" alt="Kittilä" title="Kittilä" onclick="myFunction_Kit()" coords="320,186,24" shape="circle">
+                  </map>
+
+                </div>
+
+
+                <button class="airp airp--">2</button>
+                <button class="airp airp--">3</button>
+                <button class="airp airp--">4</button>
+                <button class="airp airp--">5</button>
+                <button class="airp airp--">6</button>
+                <button class="airp airp--">7</button> -->
             </div>
             <div class="boxes">
+                <!-- right1 -->
                 <section class="box">
                     <header>
                         <h2>Game Status</h2>
@@ -55,43 +93,52 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>CO2 Consumed: <span id="consumed">999</span>kg</td>  <!-- <span></span> : place have value that change -->
-                            <td>CO2 Budget: <span id="budget">9999</span>kg</td>
+                            <td>CO2 Consumed: <span id="consumed"></span>kg</td>  <!-- <span></span> : place have value that change -->
+                            <td>CO2 Budget: <span id="budget"></span>kg</td>
                         </tr>
                     </table>
                 </section>
-
+                <!-- right2 -->
                 <section class="box">
-
                     <table id="airport-name">
                         <tr>
-                            <td id="airport-temp">10°C</td>
-                            <td id="airport-conditions">Cloudy</td>
+                            <td id="firstName">Helsinki</td>
+                            <td id="nextAirportName">
+                                <p id="nextAirport Name"></p>
+                                <p id="nextAirport temp"></p>
+                                <p id="nextAirport Weather"></p>
+                            </td>
                         </tr>
                     </table>
 
                     <table id="weather">
                         <tr>
-                            <td>Temperature</td>
                             <td>
-                                <img id="weather-icon" src="https://openweathermap.org/img/wn/10d@2x.png" alt="Current weather">
+                                <p id="temps"></p>
+                            </td>
+
+                            <td>
+                                <p id="distance"></p>
                             </td>
                         </tr>
                     </table>
                 </section>
-
+                <!-- right3 -->
                 <section id="player-name">
                     <header>
                         <h2>Stops</h2>
                     </header>
                 </section>
-
+                <!-- right4 -->
                 <section class="minigame">
                     <h3>Score:
                         <span id="results"></span>
                     </h3>
-                    <div class="grid">
-                    </div>
+                    <table class="showing">
+                        <td class="grid" height="300px"></td>
+                        <td class="showing-text">- 1000</td>
+                    </table>
+
                 </section>
 
 
