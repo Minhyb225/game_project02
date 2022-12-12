@@ -45,7 +45,7 @@ cursor.execute(sql)
 
 
 
-
+"""
 # Calculating the distance using the geopy library:
 
 import geopy
@@ -87,3 +87,4 @@ def Distance(icao1, icao2):
     distance = distance.distance((lat1, long1), (lat2, long2)).km
     distance = int(distance)
     print(f"Distance between places is {distance} km.")
+"""
