@@ -1,128 +1,141 @@
 function runMinigame() {
 //document.addEventListener('DOMContentLoaded', () => {
-  //card options
-  const cardArray = [
-    {
-      name: 'white',
-      img: 'images/white.png'
+    //card options
+const cardArray = [
+{
+    name: 'white',
+    img: 'images/white.png'
     },
     {
-      name: 'tree',
-      img: 'images/tree.png'
+    name: 'tree',
+    img: 'images/tree.png'
     },
     {
-      name: 'tree',
-      img: 'images/tree.png'
+    ame: 'tree',
+            img: 'images/tree.png'
+        },
+        {
+            name: 'tree',
+            img: 'images/tree.png'
+        },
+        {
+    name: 'tree',
+    img: 'images/tree.png'
     },
     {
-      name: 'tree',
-      img: 'images/tree.png'
+    name: 'tree',
+    img: 'images/tree.png'
     },
     {
-      name: 'tree',
-      img: 'images/tree.png'
+    name: 'tree',
+    img: 'images/tree.png'
     },
     {
-      name: 'tree',
-      img: 'images/tree.png'
+    name: 'white',
+    img: 'images/white.png'
     },
     {
-      name: 'tree',
-      img: 'images/tree.png'
+    name: 'tree',
+    img: 'images/tree.png'
     },
     {
-      name: 'white',
-      img: 'images/white.png'
+    name: 'white',
+    img: 'images/white.png'
     },
     {
-      name: 'tree',
-      img: 'images/tree.png'
+        name: 'white',
+    img: 'images/white.png'
     },
     {
-      name: 'white',
-      img: 'images/white.png'
-    },
-    {
-      name: 'white',
-      img: 'images/white.png'
-    },
-    {
-      name: 'white',
-      img: 'images/white.png'
-    }
-  ]
-
-  cardArray.sort(() => 0.5 - Math.random())
-  console.log(cardArray[1].name)
-  const grid = document.querySelector('.grid')
-  const resultDisplay = document.querySelector('#results')
-  let cardsChosen = []
-  let cardsCompair = []
-  let lengthStop = 0
-
-  //create your board
-  function createBoard() {
-    for (let i = 0; i < cardArray.length; i++) {
-      let card = document.createElement('img')
-      card.setAttribute('src', cardArray[i].img)
-      card.setAttribute('id', i)
-      if (cardArray[i].name === "white")
-        {cardsCompair.push(i)
+    name: 'white',
+    img: 'images/white.png'
         }
-      card.addEventListener('click', flipCard)
-      grid.appendChild(card)
+]
+
+    cardArray.sort(() => 0.5 - Math.random())
+    console.log(cardArray[1].name)
+    const grid = document.querySelector('.grid')
+    const resultDisplay = document.querySelector('#results')
+    let cardsChosen = []
+    let cardsCompair = []
+
+    //create your board
+function createBoard() {
+    for (let i = 0; i < cardArray.length; i++) {
+    let card = document.createElement('img')
+            card.setAttribute('src', cardArray[i].img)
+            card.setAttribute('id', i)
+            if (cardArray[i].name === "white") {
+                cardsCompair.push(i)
+            }
+            card.addEventListener('click', flipCard)
+            grid.appendChild(card)
+        }
+        setTimeout(hide, 3000)
     }
-    setTimeout(hide, 3000)
-  }
-  //check for matches
-  function checkForMatch() {
-    if (String(cardsChosen)==String(cardsCompair)) {
-      let cardss = document.querySelectorAll('img')
-      for (let i = 0; i < cardArray.length; i++) {
-        if (cardArray[i].name === "tree") {
-            cardss[i].setAttribute('src', 'images/tree.png');
+
+    //check for matches
+    function checkForMatch() {
+        if (String(cardsChosen) == String(cardsCompair)) {
             alert('You found a match')
-            break
+            let cardss = document.querySelectorAll('img')
+            for (let i = 0; i < cardArray.length; i++) {
+                if (cardArray[i].name === "tree") {
+                    cardss[i].setAttribute('src', 'images/tree.png');
+                    console.log(cardss[i])
+                }
+                ;
+
+            }
+            ;
+            cardss[0].setAttribute('src', 'img/FinalandNoBorders.png');
+
+            grid.appendChild()
         }
-
-      }
+        ;
+        resultDisplay.textContent = 'Sorry, try next time';
+        //document.getElementById("minigame").innerHTML = img src="img/LOST-2.png" alt="loser";
+        cardsChosen = [];
+        //resultDisplay.textContent = cardsWon.length
     }
-    resultDisplay.textContent = 'Sorry, try next time'
-    cardsChosen = []
-    //resultDisplay.textContent = cardsWon.length
-  }
-  convertChosen = []
-  //flip your card
-  function flipCard() {
-    let cardId = this.getAttribute('id')
-    cardsChosen.push(cardId)
-    this.setAttribute('src', 'images/tree.png')
-    this.removeEventListener('click', flipCard)
-    if (cardsChosen.length === cardsCompair.length) {
-      cardsChosen.sort(function(a, b){return a - b})
-      setTimeout(checkForMatch, 500)
-    }
-  }
 
-  //create hide function
-  function hide() {
-    let cards = document.querySelectorAll('img')
-    for (let i = 0; i < cardArray.length; i++) {
-     if (cardArray[i].name === "tree")
-        {cards[i].setAttribute('src', 'images/white.png')
+    convertChosen = []
+
+    //flip your card
+    function flipCard() {
+        let cardId = this.getAttribute('id')
+        cardsChosen.push(cardId)
+        this.setAttribute('src', 'images/tree.png')
+        this.removeEventListener('click', flipCard)
+        if (cardsChosen.length === cardsCompair.length) {
+            cardsChosen.sort(function (a, b) {
+                return a - b
+            })
+            setTimeout(checkForMatch, 500)
         }
     }
-  }
 
-  createBoard()
+    //create hide function
+    function hide() {
+        let cards = document.querySelectorAll('img')
+        for (let i = 0; i < 15; i++) {
+            if (cardArray[i].name == "tree") {
+                cards[i].setAttribute('src', 'images/white.png')
+            }
+        }
+    }
+
+    createBoard()
 //})
 };
 /////////
 
+namePlayer = prompt('Type your name.');
+document.getElementById("player-name").innerHTML = namePlayer;
 
-async function getData(cityId){
+async function getData(cityId) {
     try {
-        var response = await fetch('http://127.0.0.1:5001/'+cityId);
+        var response = await fetch('http://127.0.0.1:5001/' + cityId);
         var data = await response.json();
         return data
     } catch (error) {
@@ -131,53 +144,34 @@ async function getData(cityId){
     }
 
 };
-
-
+let points = 3
+document.getElementById("points").innerHTML = points + ' Stops';
+let co2Consumed = 0
 
 
 function weatherData(a) {
-  //console.log(a); // "Some User token"
-  let temp = JSON.parse(JSON.stringify(a));
-  let city = temp['name'];
-  //var description = temp['weather'][0]['description'];
-  //var icon = "http://openweathermap.org/img/wn/" + temp['weather'][0]['icon'] + ".png";
-  var temper = Math.round(temp['main']['temp'] - 273.15);  // in F
-  //var humid = temp['main']['humidity'];
-  //var windSpeed = temp['wind']['speed'];
-  //console.log(temp['weather'][0]['icon']);
-  //document.getElementById(b).innerHTML += "<img src="+icon+" alt=''></img> <br>";
-  //document.getElementById(b).innerHTML += city+"<br>";
-  //document.getElementById(b).innerHTML += description+"<br>";
-  //document.querySelector('.temps').innerHTML += "Hello World!" = "T: " + temper + "°C";
-  document.getElementById("nextAirport Name").innerHTML = city;
-  document.getElementById("nextAirport temp").innerHTML = temper;
-  //document.getElementById(b).innerHTML += "H: "+humid+ "%";
-  //alert(temper)
+    //console.log(a); // "Some User token"
+    let temp = JSON.parse(JSON.stringify(a));
+    let city = temp['name'];
+    //var description = temp['weather'][0]['description'];
+    //var icon = "http://openweathermap.org/img/wn/" + temp['weather'][0]['icon'] + ".png";
+    var temper = Math.round(temp['main']['temp'] - 273.15);  // in F
+    //var humid = temp['main']['humidity'];
+    //var windSpeed = temp['wind']['speed'];
+    //console.log(temp['weather'][0]['icon']);
+    //document.getElementById(b).innerHTML += "<img src="+icon+" alt=''></img> <br>";
+    //document.getElementById(b).innerHTML += city+"<br>";
+    //document.getElementById(b).innerHTML += description+"<br>";
+    //document.querySelector('.temps').innerHTML += "Hello World!" = "T: " + temper + "°C";
+    document.getElementById("nextAirport Name").innerHTML = city;
+    document.getElementById("nextAirport temp").innerHTML = 'Temperature: ' + temper + '°C';
+    //document.getElementById(b).innerHTML += "H: "+humid+ "%";
+    //alert(temper)
 }
-
 
 
 ///////////////
 
-/*
-let co2Consumed = 0
-let disConsumed = 0
-function maingame() {
-  let points = Math.floor(Math.random() * 6) + 3);
-    for (let i = 0; i < points; i++) {
-      alert('Choose another airport')
-      const card = document.createElement('img')
-      card.setAttribute('src', cardArray[i].img)
-      card.setAttribute('id', i)
-      if (cardArray[i].name === "white")
-        {cardsCompair.push(i)
-        }
-      card.addEventListener('click', flipCard)
-      grid.appendChild(card)
-    }
-    setTimeout(hide, 4000)
-  }
-*/
 
 async function getAirportPosition(icao) {
     try {
@@ -191,27 +185,35 @@ async function getAirportPosition(icao) {
         return jsonData.Lat, jsonData.Long;
     }
 };
+let consumedCo2 = 0;
 
 async function getAirportDistance(icao_start, icao_end) {
     let jsonData;
     try {
         const response = await fetch('http://127.0.0.1:5001/airportdistance/' + icao_start + '/' + icao_end);    // starting data download, fetch returns a promise which contains an object of type 'response'
         jsonData = await response.json();          // http://127.0.0.1:5001/airportdistance/EFHA/EFKT  g the data retrieved from the response object using the json() function// log the result to the console
-        let x = jsonData.dist;
+        let x = Math.floor(jsonData.dist);
+        let co2 = 0;
+        co2 = x * 20;
+        consumedCo2 += co2;
+        document.getElementById("temps").innerHTML = Math.floor(jsonData.dist * 20) + ' kg';
+        document.getElementById("consumed").innerHTML = 'C02-consumed: ' + consumedCo2 + ' kg';
     } catch (error) {
         console.log(error.message);
     } finally {                                         // finally = this is executed anyway, whether the execution was successful or not
-        return document.getElementById("distance").innerHTML = jsonData.dist;
+        return document.getElementById("distance").innerHTML = Math.floor(jsonData.dist) + ' km';
     }
     console.log(x);
 };
+
 function checkDistance() {
     if (list1.length == 2) {
         getAirportDistance(list1[0], list1[1]);
-        list1 = []
-    }
-    else {
-       alert('Choose another airport')
+        list1 = [];
+        points -= 1;
+        document.getElementById("points").innerHTML = points + ' Stops';
+    } else {
+        alert('Choose another airport')
     }
 
 }
@@ -219,6 +221,7 @@ function checkDistance() {
 
 let icao = "";
 list1 = [];
+
 /*
 function myFunction_Helsinki {
     var city = getData(658225)
@@ -234,21 +237,27 @@ function myFunction_Mariehamn() {
     icao = 'EFMA';
     list1.push(icao);
     checkDistance()
+    runMinigame()
 };
+
 function myFunction_Turku() {
     var city = getData(633679)
     city.then((value) => weatherData(value));
     icao = 'EFTU';
     list1.push(icao);
     checkDistance()
+    runMinigame()
 };
+
 function myFunction_Utti() {
     var city = getData(633259)
     city.then((value) => weatherData(value));
     icao = 'EFUT';
     list1.push(icao);
     checkDistance()
+    runMinigame()
 };
+
 function myFunction_Pori() {
     var city = getData(640999)
     city.then((value) => weatherData(value));
@@ -256,6 +265,7 @@ function myFunction_Pori() {
     list1.push(icao);
     checkDistance()
 };
+
 function myFunction_Tampere() {
     city = getData(634963)
     city.then((value) => weatherData(value));
@@ -279,6 +289,7 @@ function myFunction_Halli() {
     list1.push(icao);
     checkDistance()
 };
+
 function myFunction_Jyväskylä() {
     var city = getData(655194)
     city.then((value) => weatherData(value));
@@ -286,6 +297,7 @@ function myFunction_Jyväskylä() {
     list1.push(icao);
     checkDistance()
 };
+
 function myFunction_Vaasa() {
     var city = getData(632978)
     city.then((value) => weatherData(value));
@@ -293,6 +305,7 @@ function myFunction_Vaasa() {
     list1.push(icao);
     checkDistance()
 };
+
 function myFunction_Kuopio() {
     var city = getData(650224)
     city.then((value) => weatherData(value));
@@ -300,6 +313,7 @@ function myFunction_Kuopio() {
     list1.push(icao);
     checkDistance()
 };
+
 function myFunction_Joensuu() {
     var city = getData(655808)
     city.then((value) => weatherData(value));
@@ -307,12 +321,13 @@ function myFunction_Joensuu() {
     list1.push(icao);
     checkDistance()
 };
+
 function myFunction_Kokkola() {
     var city = getData(651943)
-        city.then((value) => weatherData(value));
-        icao = 'EFKK';
-        list1.push(icao);
-        checkDistance()
+    city.then((value) => weatherData(value));
+    icao = 'EFKK';
+    list1.push(icao);
+    checkDistance()
 };
 
 function myFunction_Kajaani() {
@@ -322,19 +337,23 @@ function myFunction_Kajaani() {
     list1.push(icao);
     checkDistance()
 };
+
 function myFunction_Oulu() {
     var city = getData(643492)
     city.then((value) => weatherData(value));
     icao = 'EFOU';
     list1.push(icao);
     checkDistance()
+    runMinigame()
 };
+
 function myFunction_Kemi() {
-        city = getData(653281)
-        city.then((value) => weatherData(value));
-        icao = 'EFKE';
-        list1.push(icao);
-        checkDistance()
+    city = getData(653281)
+    city.then((value) => weatherData(value));
+    icao = 'EFKE';
+    list1.push(icao);
+    checkDistance()
+    runMinigame()
 };
 
 function myFunction_Kuusamvaro() {
@@ -342,8 +361,10 @@ function myFunction_Kuusamvaro() {
     city.then((value) => weatherData(value));
     icao = 'EFKS';
     list1.push(icao);
-    checkDistance()
+    checkDistance();
+    runMinigame()
 };
+
 function myFunction_Rovaniemi() {
     var city = getData(638936)
     city.then((value) => weatherData(value));
@@ -361,17 +382,18 @@ function myFunction_Enontekiö() {
 };
 
 function myFunction_Kit() {
-  var city = getData(652590);
-  city.then((value) => weatherData(value));
-  icao = 'EFKT';
-  list1.push(icao);
-  checkDistance()
+    var city = getData(652590);
+    city.then((value) => weatherData(value));
+    icao = 'EFKT';
+    list1.push(icao);
+    checkDistance()
 };
+
 function myFunction_Iva() {
-  var city = getData(656220);
-  city.then((value) => weatherData(value));
-  icao = 'EFHA';
-  list1.push(icao);
-  checkDistance();
-  runMinigame()
+    var city = getData(656220);
+    city.then((value) => weatherData(value));
+    icao = 'EFHA';
+    list1.push(icao);
+    checkDistance();
+    runMinigame()
 };

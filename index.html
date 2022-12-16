@@ -11,10 +11,13 @@
     <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.esm.js" defer></script> <!-- ionicons library-->
     <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.js" defer></script>
     <script src="main.js" defer></script>
-    <title>Top Gun</title>
+    <title>Moomin</title>
 </head>
 
 <body>
+    <audio controls loop>
+    <source src="sounds/moominsong.wav" type="audio/wav">
+    </audio>
     <div class="container">  <!-- block the body place -->
         <header class="page-header">
             <nav> <!-- nav element: make separate place -->
@@ -23,7 +26,7 @@
                         <a class="button button-white" href="index.html">Game</a>
                     </li>
                     <li class="page-title">
-                        <ion-icon name="airplane-outline"></ion-icon>&nbsp;Moonmin's&nbsp;Travelling&nbsp;<ion-icon name="airplane-outline"></ion-icon>
+                        <ion-icon name="airplane-outline"></ion-icon>&nbsp;Moomin's&nbsp;Traveling&nbsp;<ion-icon name="airplane-outline"></ion-icon>
                     </li>
                     <li>
                         <a class="button button-white" href="about.html">About</a>
@@ -89,12 +92,13 @@
                     <table>
                         <tr> <!-- table row -->
                             <td colspan="2">  <!-- table cell -->
-                                <h3 id="player-name">Player Name</h3>
+                                <h3 id="player-name"></h3>
                             </td>
                         </tr>
                         <tr>
-                            <td>CO2 Consumed: <span id="consumed"></span>kg</td>  <!-- <span></span> : place have value that change -->
-                            <td>CO2 Budget: <span id="budget"></span>kg</td>
+
+                            <td id="consumed"></td>
+                            <td id="budget"></td>
                         </tr>
                     </table>
                 </section>
@@ -114,11 +118,11 @@
                     <table id="weather">
                         <tr>
                             <td>
-                                <p id="temps"></p>
+                                <p id="distance"></p>
                             </td>
 
                             <td>
-                                <p id="distance"></p>
+                                <p id="temps"></p>
                             </td>
                         </tr>
                     </table>
@@ -126,7 +130,7 @@
                 <!-- right3 -->
                 <section id="player-name">
                     <header>
-                        <h2>Stops</h2>
+                        <h2 id="points"> Stops </h2>
                     </header>
                 </section>
                 <!-- right4 -->
@@ -148,7 +152,7 @@
 
 
         <footer class="page-footer">
-            <p>I made this!</p>
+            <p>Moomin's Traveling -22</p>
         </footer>
         <div class="goal hide">
             <h2>Gooooool!!!</h2>
@@ -161,7 +165,7 @@
 
 <!--
     <div id="player-modal">
-        <form id="player-form"> <!-- form is readed by Js
+        <form id="player-form"> <!- form is readed by Js
             <input id="player-input" type="text" placeholder="Player name" required>
             <input type="submit" value="Start game">
         </form>

@@ -5,6 +5,15 @@
   --white: rgb(248, 246, 246);
   --grey: rgb(128, 128, 128);
   --dark-grey: rgb(57, 57, 57);
+
+  --lilac: rgb(222, 201, 255);
+  --lightpink: rgb(255, 222, 233);
+  --lightblue: rgb(222, 246, 255);
+  --yellow: rgb(255, 253, 196);
+  --green: rgb(209, 255, 213);
+  --beige: rgb(242, 226, 220);
+  --darkpink: rgb(171, 53, 97);
+  --darkblue: rgb(3, 103, 166);
 }
 
 /* utilites */

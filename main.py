@@ -13,7 +13,7 @@ db_connection = mysql.connector.connect(
     port=3306,
     database='flight_game',
     user='root',
-    password='Nu151200',
+    password='',
     autocommit=True
 )
 
@@ -29,9 +29,6 @@ def fetch_airport_names_by_icao_code(icao):
     return "", ""
 @app.route('/airportdistance/<a>/<b>')
 def calculate_distance_between_airports(a,b):
-#    args = request.args
-#   a = fetch_airport_names_by_icao_code(args.get("start"))
-#    b = fetch_airport_names_by_icao_code(args.get("end"))
 
     mycursor = db_connection.cursor()
     mycursor.execute(f"select latitude_deg, longitude_deg from airport where ident = '{a}' or ident = '{b}';")
