@@ -136,23 +136,12 @@ async function getData(cityId){
 
 
 function weatherData(a) {
-  //console.log(a); // "Some User token"
   let temp = JSON.parse(JSON.stringify(a));
   let city = temp['name'];
-  //var description = temp['weather'][0]['description'];
-  //var icon = "http://openweathermap.org/img/wn/" + temp['weather'][0]['icon'] + ".png";
   var temper = Math.round(temp['main']['temp'] - 273.15);  // in F
-  //var humid = temp['main']['humidity'];
-  //var windSpeed = temp['wind']['speed'];
-  //console.log(temp['weather'][0]['icon']);
-  //document.getElementById(b).innerHTML += "<img src="+icon+" alt=''></img> <br>";
-  //document.getElementById(b).innerHTML += city+"<br>";
-  //document.getElementById(b).innerHTML += description+"<br>";
-  //document.querySelector('.temps').innerHTML += "Hello World!" = "T: " + temper + "°C";
-  document.getElementById("nextAirport Name").innerHTML = city;
+    document.getElementById("nextAirport Name").innerHTML = city;
   document.getElementById("nextAirport temp").innerHTML = temper;
-  //document.getElementById(b).innerHTML += "H: "+humid+ "%";
-  //alert(temper)
+
 }
 
 
